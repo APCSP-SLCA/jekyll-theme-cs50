@@ -33,7 +33,7 @@
 
         {%- assign time = site.time | date: '%s' -%}
 
-        <link href="/favicon.ico?{{ time }}" rel="icon">
+        <link href="{{ '/favicon.ico?' | prepend: site.baseurl }}?{{ time }}" rel="icon">
 
         <!-- https://fonts.google.com/specimen/PT+Sans?query=PT+Sans&selection.family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700 -->
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
@@ -83,7 +83,7 @@
         {% if site.algolia -%}
         <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
         <script src="{{ '/assets/algoliasearch/dist/algoliasearch-lite.umd.js' | prepend: site.baseurl }}?{{ time }}"></script>
-        <script src="{{ '/assets/instantsearch.js/dist/instantsearch.production.min.js | prepend: site.baseurl }}?{{ time }}"></script>
+        <script src="{{ '/assets/instantsearch.js/dist/instantsearch.production.min.js' | prepend: site.baseurl }}?{{ time }}"></script>
         {%- endif %}
 
         <link href="{{ '/assets/' | prepend: site.baseurl | append: page.layout | append: '.css' }}?{{ time }}" rel="stylesheet">
