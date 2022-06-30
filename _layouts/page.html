@@ -142,7 +142,7 @@
 
                     </nav>
 
-                    <footer>
+                    <footer class="collapse d-md-block position-sticky bottom-0">
 
                         {%- capture footer -%}{%- include footer.md -%}{%- endcapture -%}
                         {{- footer | markdownify | replace: " id=", " data-id=" | strip -}}
