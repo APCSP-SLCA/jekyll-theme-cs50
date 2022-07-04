@@ -19,10 +19,10 @@
             {%- if page.title -%}
                 {{- page.title -}}
             {%- endif -%}
-            {%- if site.cs50.title -%}
-                {%- unless site.github and site.cs50.title == site.github.repository_name -%}
+            {%- if site.title -%}
+                {%- unless site.github and site.title == site.github.repository_name -%}
                     {%- if page.title %} - {% endif -%}
-                    {{- site.cs50.title -}}
+                    {{- site.title -}}
                 {%- endunless -%}
             {%- endif -%}
         {%- endcapture -%}
@@ -105,9 +105,9 @@
 
     <body class="invisible">
 
-        {% if site.cs50.alert %}
+        {% if site.alert %}
         {%- capture alert -%}{%- include alert.md -%}{%- endcapture -%}
-        <div class="alert fixed-top mb-0 rounded-0 shadow" data-alert="{{ site.cs50.alert }}" data-hash="{{ alert | md5 }}" id="alert" role="alert">
+        <div class="alert fixed-top mb-0 rounded-0 shadow" data-alert="{{ site.alert }}" data-hash="{{ alert | md5 }}" id="alert" role="alert">
             <button aria-label="Close" class="btn-close d-none" data-bs-dismiss="alert" type="button"></button>
             {{- alert | markdownify | replace: " id=", " data-id=" | strip -}}
         </div>
