@@ -364,9 +364,11 @@ $(document).on('DOMContentLoaded', function() {
         };
 
         // Icons
-        const plus = $('<span class="fa-li"><i class="far fa-plus-square"></i></span>').click(click);
-        const minus = $('<span class="fa-li"><i class="far fa-minus-square"></i></span>').click(click);
+        const plus_square = $('<span class="fa-li"><i class="far fa-plus-square"></i></span>').click(click);
+        const minus_square = $('<span class="fa-li"><i class="far fa-minus-square"></i></span>').click(click);
         const square = $('<span class="fa-li"><i class="fas fa-square"></i></span>');
+        const question = $('<span class="fa-li"><i class="fas fa-question"></i></span>');
+        const minus = $('<span class="fa-li"><i class="fas fa-minus"></i></span>');
 
         // Wrapper
         const $span = $('<span>').click(click);
@@ -374,11 +376,21 @@ $(document).on('DOMContentLoaded', function() {
         // If +
         if ($(element).attr('data-marker') === '+') {
             $(element).contents().filter(filter).wrap($span);
-            $(element).prepend(plus);
+            $(element).prepend(plus_square);
         }
 
         // If -
         else if ($(element).attr('data-marker') === '-') {
+            $(element).contents().filter(filter).wrap($span);
+            $(element).prepend(minus_square);
+        }
+
+        else if ($(element).attr('data-marker') === '?') {
+            $(element).contents().filter(filter).wrap($span);
+            $(element).prepend(question);
+        }
+
+        else if ($(element).attr('data-marker') === '--') {
             $(element).contents().filter(filter).wrap($span);
             $(element).prepend(minus);
         }
