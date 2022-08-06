@@ -353,7 +353,7 @@ $(document).on('DOMContentLoaded', function() {
                 }
                 else if (marker === '?') {
                     $(element).attr('data-marker', '--');
-                    $(element).find('> .fa-li > .fa-question').removeClass('fa-question').addClass('fa-question');
+                    $(element).find('> .fa-li > .fa-question').removeClass('fa-question').addClass('fa-minus');
                 }
                 else if (marker === '--') {
                     $(element).attr('data-marker', '?');
