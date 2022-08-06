@@ -351,6 +351,14 @@ $(document).on('DOMContentLoaded', function() {
                     $(element).attr('data-marker', '+');
                     $(element).find('> .fa-li > .fa-minus-square').removeClass('fa-minus-square').addClass('fa-plus-square');
                 }
+                else if (marker === '?') {
+                    $(element).attr('data-marker', '--');
+                    $(element).find('> .fa-li > .fa-question').removeClass('fa-question').addClass('fa-question');
+                }
+                else if (marker === '--') {
+                    $(element).attr('data-marker', '?');
+                    $(element).find('> .fa-li > .fa-minus').removeClass('fa-minus').addClass('fa-question');
+                }
                 $(window).trigger('resize');
             }
         };
